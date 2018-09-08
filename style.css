@@ -1,0 +1,536 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+}
+*{
+  box-sizing: border-box;
+  font-size: 11px;
+}
+#particles-js{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;;
+}
+.home-sec{
+  margin-bottom:30px;
+}
+.hs-head{
+  padding: 10px 0px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  margin:30px auto;
+}
+.def-check input[type=checkbox]{
+  display: none;
+}
+.def-check label{
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.def-check label p{
+  margin-top: 3px;
+}
+.def-check label .dc-border{
+  width: 22px;
+  height: 22px;
+  display: block;
+  border-radius: 50%;
+  border:2px solid #ddd;
+  text-align: center;
+  margin-right: 5px;
+}
+.def-check label .dc-border i{
+  transform: scale(0);
+  transition: .2s;
+  font-size: 10px;
+  line-height: 20px;
+}
+.def-check input[type=checkbox]:checked + label .dc-border{
+  border-color:var(--site-info-color);
+  color:var(--site-info-color);
+}
+.def-check input[type=checkbox]:checked + label .dc-border i{
+  transform: scale(1);
+}
+/*
+------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION STYLE---------------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+.tabs-container{
+  width: 1100px;
+  height: 90vh;
+  background: #fff;
+  margin:auto;
+  box-shadow: 0 0 70px rgba(3, 169, 244, 0.3);
+  position: relative;
+}
+.tc-btns{
+  background: #f8f8f8;
+
+}
+.tc-btns a{ 
+  padding:15px 20px;
+  display: inline-block;
+  color :#bbb;
+  text-decoration: none;
+  font-size: 11px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 2px solid #f8f8f8;
+  border-left: 2px solid #f8f8f8;
+  
+}
+.tc-btns a i{
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.tc-btns a:hover{
+  color:#888;
+}
+.tc-btns a.tc-active{
+  background: #fff;
+  color: #555;
+  border-right: 2px solid #919191;
+  border-left: 2px solid #919191;
+}
+.tc-tabs-wrap{
+  height: 81vh;
+  overflow-y: scroll;
+  margin-right: 5px;
+}
+.tc-tab{
+}
+.tc-tabs-wrap::-webkit-scrollbar{
+  width: 6px;
+}
+.tc-tabs-wrap::-webkit-scrollbar-thumb{
+  background: #bbb;
+  border-radius: 50px;
+}
+.tc-tabs-wrap .tc-tab{
+  margin-top: 30px;
+  display: none;
+}
+.tc-tabs-wrap .tc-tab:nth-child(1){
+  display: block;
+}
+/*
+------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION ONE STYLES----------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+.scrapping-timing{
+  padding-bottom: 10px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 11px;
+}
+.scrapping-timing .scrapping-timer span,
+.scrapping-site span,
+.scrapping-meta span{
+  color: var(--site-info-color);
+}
+.scrapping-timing div:nth-child(2){
+  text-align: center;
+}
+.scrapping-timing div:nth-child(3){
+  text-align: right;
+}
+.log-container{
+  height: 350px;
+  border:1px solid #ddd;
+  background: #f8f8f8;
+  font-family: 'Jura', sans-serif;
+  padding: 10px;
+  color:#000;
+  overflow-y: scroll;
+  font-size: 11px;
+}
+.bold{
+  font-weight: 700;
+}
+.log-container ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.log-container ul li{
+  padding: 1px 0;
+}
+.log-container::-webkit-scrollbar{
+  width: 6px;
+}
+.log-container::-webkit-scrollbar-thumb{
+  background: #bbb;
+  border-radius: 50px;
+}
+.scrapping-bar{
+  width: 100%;
+  height: 30px;
+  box-shadow: inset 0 0px 20px rgba(0,0,0,.1);
+  border-top-style: none;
+  overflow: hidden;
+  border:1px solid #ddd;
+  border-top-style: none;
+  text-align: center;
+  display: none;
+  position: relative;
+}
+.scrapping-bar .sb-text{
+  position: absolute;
+  left:0;
+  display: block;
+  width: 100%;
+  color:#000;
+  line-height: 30px;
+  text-align: center;
+}
+.scrapping-bar .sb-fill{
+  display: block;
+  width: 0%;
+  height: 30px;
+  background: var(--site-color);
+  box-shadow: inset -25px 0px 40px rgb(35, 134, 40);
+  transition: .5s;
+}
+#init-scrap{
+  margin: auto;
+  margin-top: 20px;
+  font-size: 11px;
+}
+.after-start,
+.before-start{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.after-start{
+  display: none;
+  margin-top: 20px;
+}
+.after-start button{
+  margin:0 5px;
+  padding: 8px;
+  border-radius: 20px/10px;
+}
+.after-start button i{
+  font-size: 18px;
+}
+.lc-current-state{
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  display: none;
+  font-family: 'Jura', sans-serif;
+}
+/*
+------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION TWO STYLES----------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+.ogss-img-sec{
+  display: block;
+  margin: auto;
+  width: 400px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+}
+.ogss-img-sec img{
+  width: 100%;
+}
+.scrapping-stats ul{
+  padding:0;
+  list-style: none;
+  border:1px solid #ddd;
+  padding: 10px;
+}
+.scrapping-stats ul li{
+  padding: 10px 0;
+  border-bottom:1px solid #f5f5f5;
+  font-size: 12px;
+}
+.scrapping-stats ul li:last-child{
+  border:none;
+}
+.scrapping-stats ul li span{
+  float: right;
+  color: var(--site-info-color);
+  font-weight: 700;
+}
+.scrapping-stats ul li span a{
+  color:var(--site-info-color);
+  text-decoration: none;
+}
+.scrapping-stats ul li span a:hover{
+  text-decoration: underline;
+}
+/*
+------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION THREE STYLES -------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+
+.ts-search{
+  width: 100%;
+  height: 50px;
+  background: #000;
+}
+.ts-search form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ts-search form input{
+  height: 100%;
+  border:none;
+  border:1px solid #ddd;
+}
+.ts-links{
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border:1px solid #ddd;
+  border-top-style: none;
+}
+.ts-links-update{
+  display: flex;
+  padding: 10px 15px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.ts-links-update button{
+  font-size: 11px;
+}
+.ts-links::-webkit-scrollbar{
+  width: 6px;
+}
+.ts-links::-webkit-scrollbar-thumb{
+  background: #bbb;
+  border-radius: 50px;
+}
+.ts-links ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border:none;
+  margin-left: 5px;
+}
+.ts-links ul li{
+  padding: 10px;
+  border-bottom:1px solid #ddd;
+  position: relative;
+}
+.ts-links ul li span{
+  float: none;
+  color:inherit;
+  font-weight: normal;
+}
+.ts-links ul li:last-child{
+  border:none;
+}
+.ts-links ul li .ts-site-title,
+.ts-links ul li .ts-site-link{
+  display: block;
+}
+.ts-links ul li .ts-site-link{
+  font-size: 12px;
+  color:#aaa;
+  padding-top: 10px;
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ts-links ul li:hover .ts-site-link{
+  color:var(--site-info-color);
+}
+.ts-links ul li .ts-site-opts{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: none;
+}
+.ts-links ul li .ts-site-opts span{
+  font-size: 13px;
+  color:#aaa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.ts-links ul li .ts-site-opts span:hover{
+  color:#000;
+}
+.ts-links ul li .col-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50px;
+  overflow: hidden;
+}
+.ts-links ul li .col-1 img{
+  width: 60px;
+}
+.ts-links ul li:hover{
+  background: #f8f8f8;
+  color:#000;
+}
+.ts-links ul li:hover .ts-site-opts{
+  display: block
+}
+/*
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION FOUR STYLES----------------------------------------
+-------------------------------------------------------------------------------------------------------------
+*/
+.add-sites{
+  margin-top: 30px;
+}
+.add-site-error{
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  color:red;
+}
+.add-sites input,
+.add-sites textarea{
+   width: 100%;
+   border:none;
+   border:1px solid #ddd;
+}
+.add-sites .col-3,
+.add-sites .col-6,
+.add-sites .col-12{
+  margin-bottom: 20px;
+}
+.add-sites .col-6 textarea{
+  height: 80px;
+  resize: none;
+}
+.add-sites .col-12 textarea{
+  height: 150px;
+  resize: none;
+}
+.add-sites textarea::-webkit-scrollbar{
+  width: 6px;
+}
+.add-sites textarea::-webkit-scrollbar-thumb{
+  background: #bbb;
+  border-radius: 50px;
+}
+.add-sites input:focus,
+.add-sites textarea:focus{
+  border-color:var(--site-info-color);
+}
+.add-site-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.scrapping-stats.scrapping-stats-rt .row ul{
+  margin-top: 50px;
+}
+.modal-bg{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+}
+.modal-bg .dialog{
+  margin:auto;
+}
+/*
+--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------- TABS SECTION FIVE STYLES-----------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+*/
+.ts-settings{
+  padding:10px;
+  background: #f7f7f7;
+  border:1px solid #ddd;
+  border-bottom-style: none;
+}
+.ts-settings-contents{
+  border:1px solid #ddd;
+  height: 200px;
+}
+.ts-settings-contents .def-select-wrap{
+  margin: auto;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

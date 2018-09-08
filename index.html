@@ -1,0 +1,329 @@
+<html>
+    <head>
+        <title> Job Search Engine </title>
+        <link rel="stylesheet" href="components/components.css">
+        <link rel="stylesheet" href="Plugins/Bootstrap/bootstrap-grid.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Jura:400,500,600,700|Open+Sans:300i,400,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="Plugins/particles.min.js"></script>
+        <script src="Plugins/angular.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+        <div id="particles-js"></div>
+
+       <div class="tabs-container">
+           <div class="tc-btns">
+               <a href="#" class="tc-active"> <i class="fas fa-magic"></i> Current Scrapping </a>
+               <a href="#" class=""> <i class="fas fa-chart-area"></i> Over All Stats </a>
+               <a href="#" class=""> <i class="fas fa-database"></i> Scrapper Data </a>
+               <a href="#" class=""> <i class="fas fa-code"></i> Add a Website </a>
+               <a href="#" class=""> <i class="fas fa-wrench"></i> Scrapper Settings </a>
+           </div>
+           <div class="tc-tabs-wrap">
+               <div class="tc-tab">
+                    <div class="home-sec total-sites ">
+                        <div class="hs-head">Scrapper Console </div>
+                        <div class="container">
+                            <div class="scrapping-timing row">
+                                 <div class="col-4 scrapping-timer">Time Lapse - <span>00 : 00 : 00</span></div>
+                                 <div class="col-4 scrapping-site"> Website # <span></span></div>
+                                 <div class="col-4 scrapping-meta"> Page # <span class="meta1"></span>, Job # <span class="meta2"></span> </div>
+                            </div>
+                            <div class="log-container">
+                                <ul>
+
+                                </ul>
+                            </div>
+                            <div class="scrapping-bar">
+                                <span class="sb-text">Waiting for Response !</span>
+                                <span class="sb-fill"></span>
+                            </div>
+                            <div class="before-start">
+                                <button class="btn btn-info wavers wavers-light" id="init-scrap"> <i class="fas fa-bolt"></i> Start Scrapping the Sites</button>
+                            </div>
+                            <div class="after-start">
+                                <button class="btn btn-default wavers wavers-light" id="play-scrap"> <i class="fas fa-play-circle"></i> </button>
+                                <button class="btn btn-error wavers wavers-light" id="stop-scrap"> <i class="fas fa-stop-circle"></i> </button>
+                                <button class="btn btn-info wavers wavers-light" id="pause-scrap"> <i class="fas fa-pause-circle"></i> </button>
+                            </div>
+                            <div class="lc-current-state"> Current State : <span></span> </div>
+                            <div class="modal-bg lc-warning">
+                                <div class="dialog conf-dialog dialog-warning">
+                                    <div class="dia-head">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="dia-text">
+                                        Are you sure and want to abort scrapping ?
+                                    </div>
+                                    <div class="dia-decisison">
+                                        <button type="button" class="btn btn-light wavers wavers-dark" id="lc-war-cancel" name="button">Cancel</button>
+                                        <button type="button" class="btn btn-warning wavers wavers-light" id="lc-war-confirm" name="button">Accept</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="tc-tab">
+                    <div class="home-sec scrapping-stats scrapping-stats-rt">
+                            <div class="container">
+                                 <div class="hs-head">On Going Scrapping Statistics </div>
+                                 <div class="row">
+                                     <div class="col-12">
+                                         <div class="ogss-img-sec"> <img src="shots/Snap 1.png" alt=""> </div>
+                                     </div>
+                                     <div class="col-6">
+                                         <ul>
+                                             <li> Current Site Scrapping :  <span> Liebherr </span></li>
+                                             <li> Link / URL <span> <a href="">https://career5.successfactors.eu/career</a> </span></li>
+                                             <li> Total Jobs on this site <span>1542</span></li>
+                                             <li> Total Pages On this site <span>19</span></li>
+                                         </ul>
+                                     </div>
+                                     <div class="col-6">
+                                         <ul>
+                                             <li> Current Page <span>5</span></li>
+                                             <li> Current Job <span>54</span></li>
+                                             <li> Jobs to be Scrapped <span>1300</span></li>
+                                             <li> Total time taken <span>10 mins</span></li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                            </div>
+                            <div class="container">
+                                <div class="hs-head">Overall Scrapping Statistics </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li> Total Sites Scrapped <span>11</span></li>
+                                            <li> Last Time Scrapping <span>11</span></li>
+                                            <li> Total Jobs Found <span>11</span></li>
+                                            <li> Total New Jobs Found <span>11</span></li>
+                                            <li> Total Time Taken <span>11</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li> Next Scrapping Time <span>11</span></li>
+                                            <li> Total Sites to be Scrapped <span>11</span></li>
+                                            <li> Total Jobs Now <span>11</span></li>
+                                            <li> Time Left for Next Scrap <span>11</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="tc-tab">
+                    <div class="home-sec scrapping-stats">
+                        <div class="hs-head"> Total Sites ({{dataa.length}}) </div>
+                        <div class="ts-links-update">
+                            <button class="btn btn-info wavers wavers-light"> <i class="fas fa-sync-alt"></i> </button>
+                        </div>
+                        <div class="container">
+                            <div class="ts-search">
+                                <form action="" method="">
+                                    <input type="text" name="" id="ts-search" placeholder="Search for a site..." ng-model="searchText">
+                                </form>
+                            </div>
+                            <div class="ts-links">
+                                <ul> 
+                                    <li ng-repeat="element in dataa | filter:searchText" data-id={{element.id}} data-code={{element.code}}>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src={{element.image}} alt={{element.name}}>
+                                            </div>
+                                            <div class="col-11">
+                                                <span class="ts-site-title"> <i class="fas fa-university"></i> {{ element.name}} - <i class="fas fa-map-marker-alt"></i>  {{element.location}}</span>
+                                                <a href="#" class="ts-site-link"> {{element.url}} </a>
+                                                <span class="ts-site-opts">
+                                                    <span class="tsso-del"> <i class="far fa-trash-alt"></i> </span>
+                                                    <span class="tsso-view"> <i class="fas fa-link"></i> </span>
+                                                    <span class="tsso-copy"> <i class="far fa-copy"></i> </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tc-tab ">
+                    <div class="home-sec">
+                        <div class="container">
+                            <div class="hs-head"> Add a new site </div>
+                            <form action="" id="add-site-form">
+                                <div class="row add-sites">
+                                    <div class="col-12 add-site-error">
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" name="as-comp-name" placeholder="Company Name">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" name="as-comp-loc" placeholder="Company Location">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" name="as-comp-code" placeholder="Site Code">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" name="as-comp-ltime" placeholder="Site Load Time">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" name="as-comp-logo" placeholder="Website Logo / Image">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" name="as-comp-npltime" placeholder="Next Page Load Time">
+                                    </div>
+                                    <div class="col-6">
+                                        <textarea name="as-comp-url" placeholder="Website URL"></textarea>                   
+                                    </div>
+                                    <div class="col-6">
+                                        <textarea name="as-comp-npbcode" placeholder="Next Page Button Code"></textarea>                   
+                                    </div>
+                                    <div class="col-6">
+                                            <textarea name="as-comp-blcode" placeholder="Button Loading Code"></textarea>                   
+                                        </div>
+                                    <div class="col-6">
+                                        <textarea name="as-comp-pmcode" placeholder="Code for Jobs Meta"></textarea>                   
+                                    </div>
+                                    <div class="col-6">
+                                        <textarea name="as-comp-jmcode" placeholder="Code for Pages Meta"></textarea>                   
+                                    </div>
+                                    <div class="col-6">
+                                            <textarea name="as-comp-cplj" placeholder="Code for Current Page Loading Jobs"></textarea>                   
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="as-comp-pjcode" placeholder="Code for Page Jobs Data"></textarea>                   
+                                    </div>
+                                    <div class="col-12">
+                                            <textarea name="as-comp-jdcode" placeholder="Code for Jobs Details Data"></textarea>                   
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-pbool" id="as-check1">
+                                        <label for="as-check1">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Website Pagination</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-jbool" id="as-check2">
+                                        <label for="as-check2">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Javascript Loaded</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-dpbool" id="as-check3">
+                                        <label for="as-check3">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Defined Pages</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-blbool" id="as-check4">
+                                        <label for="as-check4">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Button Loading</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-spbool" id="as-check5">
+                                        <label for="as-check5">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Single Page</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-aobool" id="as-check6">
+                                        <label for="as-check6">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Add origin in the link</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-3 def-check">
+                                        <input type="checkbox" name="as-comp-aosbool" id="as-check7">
+                                        <label for="as-check7">
+                                            <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                            <p>Add '/' after origin</p>
+                                        </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="as-comp-upcode" placeholder="Paste the code in case of UNDEFINED pages..."></textarea>                   
+                                    </div>    
+                                    <div class="col-12 add-site-submit">
+                                        <button type="button" class="btn btn-info wavers wavers-light"> Continue <i class="fas fa-arrow-circle-right"></i></button>
+                                    </div>
+                                    <div class="modal-bg">
+                                        <div class="dialog conf-dialog dialog-success">
+                                            <div class="dia-head">
+                                                <i class="far fa-check-circle"></i>
+                                            </div>
+                                            <div class="dia-text">
+                                                Are you sure and want to proceed ?
+                                            </div>
+                                            <div class="dia-decisison">
+                                                <button type="button" class="btn btn-light wavers wavers-dark" id="as-mod-cancel" name="button">Cancel</button>
+                                                <button type="submit" class="btn btn-default wavers wavers-light" id="as-modal-confirm" name="button">Accept</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tc-tab">
+                    <div class="home-sec">
+                        <div class="container">
+                                <div class="hs-head"> Settings </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="ts-settings">
+                                        Settings
+                                        </div>
+                                        <div class="ts-settings-contents">
+                                            <form action="">
+                                                <div class="def-select-wrap" tabindex="1">
+                                                    <div class="def-selected-head">
+                                                        <span class="csh-text">Time</span>
+                                                        <span class="csh-icon"> <i class="flaticon-063-next"></i> </span>
+                                                    </div>
+                                                    <div class="def-select-opts">
+                                                        <li class="wavers wavers-dark">Twice a day</li>
+                                                        <li class="wavers wavers-dark">Once a day</li>
+                                                        <li class="wavers wavers-dark">Once in two days</li>
+                                                        <li class="wavers wavers-dark">Once in a week</li>
+                                                    </div>
+                                                    <span class="def-select-fill def-sel-fill-dark"></span>
+                                                </div>
+                                                <div class="def-check">
+                                                    <input type="checkbox" id="tss-check">
+                                                    <label for="tss-check">
+                                                        <span class="dc-border"> <i class="fas fa-check"></i> </span>
+                                                        <p>Notify Me when Completed</p>
+                                                    </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div> 
+     
+        
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script type="text/Javascript" src="Plugins/jquery.min.js"></script>
+    <script type="text/Javascript" src="components/components.js"></script>
+    <script type="text/Javascript" src="scripts.js"></script>
+    <script src="particles.js"></script>
+
+</html>
